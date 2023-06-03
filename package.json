@@ -1,0 +1,35 @@
+{
+  "name": "forkio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js index.html" ,
+  "scripts": {
+    "test": "gulpfile.js index.html script.js",
+    "dev": "gulp dev",
+    "build": "gulp build"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.29.3",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-clean": "^0.4.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^8.0.0",
+    "gulp-js-minify": "^0.0.3",
+    "gulp-sass": "^5.1.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-watch": "^5.0.1",
+    "sass": "^1.62.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tunzale1/forkio.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tunzale1/forkio/issues"
+  },
+  "homepage": "https://github.com/Tunzale1/forkio#readme"
+}

@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+$purple:#8D81AC;
+$white:white;
+@mixin display{
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+}
+@mixin center{
+    display: table;
+    width: 100%;
+    text-align: center;
+}
+@mixin auto{
+    margin: auto;
+    max-width: 1200px;
+}
+@mixin none{
+    display: none;
+}
+@mixin column{
+    display: flex;
+    flex-direction:column;
+}

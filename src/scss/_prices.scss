@@ -1,0 +1,211 @@
+.fork {
+  margin: 0 auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  max-width: 1200px;
+
+  &__container {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 90;
+  }
+
+  &__cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+
+    @media (max-width: ($md8 + px)) {
+      gap: 10px;
+    }
+  }
+
+  &__title-name {
+    @include text-MontWhite;
+    font-size: 48px;
+    line-height: 42px;
+    font-weight: 700;
+    padding: 100px 0px 61px 0px;
+    text-align: center;
+  }
+
+  &__card-single {
+    @include flex-column;
+    padding-bottom: 97px;
+  }
+
+  &__card-name {
+    @include text-MontWhite;
+    font-size: 24px;
+    font-weight: 400;
+    text-align: center;
+
+    padding-top: 36px;
+    padding-bottom: 36px;
+
+    width: 250px;
+    background-color: #695b6a;
+
+    @media (max-width: ($maxWidthContainer + px)) {
+      width: 228px;
+    }
+
+    @media (max-width: ($md2 + px)) {
+      width: 250px;
+    }
+
+    @media (max-width: ($md8 + px)) {
+      width: 218px;
+    }
+
+    @media (max-width: ($md3 + px)) {
+      width: 250px;
+    }
+  }
+
+  &__card-information {
+    @include flex-column;
+    @include text-MontWhite;
+    background-color: #5f5161;
+    width: auto;
+    height: 460px;
+  }
+
+  &__card-price {
+    font-size: 60px;
+    font-weight: 700;
+    padding: 30px 0px 20px 0px;
+  }
+
+  &__card-time {
+    font-size: 16px;
+    font-weight: 400;
+    padding-bottom: 38px;
+  }
+
+  &__card-details {
+    @include flex-column;
+    @include MontserratFont;
+    @include fontParameters(normal, 400, 16px, 18px, #ffffff);
+
+    text-align: center;
+    padding: 30px 0px 36px;
+  }
+
+  &__card-btn {
+    @include text-MontWhite;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 15px 38px;
+    margin-bottom: 39px;
+    background-color: #776b79;
+    border: 1px solid #776b79;
+    border-radius: 40px;
+  }
+}
+
+.card-name-another {
+  width: 299px;
+  padding-top: 43px;
+  padding-bottom: 43px;
+
+  background-color: #3f2c41;
+
+  @media (max-width: ($maxWidthContainer + px)) {
+    width: 255px;
+  }
+
+  @media (max-width: ($md2 + px)) {
+    width: 299px;
+  }
+
+  @media (max-width: ($md8 + px)) {
+    width: 245px;
+  }
+
+  @media (max-width: ($md3 + px)) {
+    width: 299px;
+  }
+}
+
+.card-price-another {
+  font-size: 82px;
+  font-weight: 400;
+  padding-top: 14px;
+  padding-bottom: 16px;
+}
+
+.card-time-another {
+  padding-bottom: 46px;
+}
+
+.btn-another {
+  margin-bottom: 47px;
+}
+
+.card-details-another {
+  padding-top: 40px;
+  padding-bottom: 83px;
+}
+
+.card-information-another {
+  background-color: #473249;
+  width: auto;
+  height: 560px;
+}
+
+.card-details-another {
+  padding: 40px 0px 83px 0px;
+}
+
+@media (max-width: ($md2 + px)) {
+  .fork {
+    &__cards {
+      max-width: 600px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      justify-items: center;
+      gap: 25px;
+      margin-bottom: 94px;
+    }
+
+    &__title-name {
+      font-size: 42px;
+      line-height: 44px;
+      padding-bottom: 39px;
+    }
+    &__card-single {
+      padding-bottom: 0px;
+    }
+    &__content {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+
+@media (max-width: ($md3 + px)) {
+  .fork {
+    font-style: normal;
+
+    &__cards {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 18px;
+    }
+
+    &__title-name {
+      font-size: 28px;
+      line-height: 42px;
+      padding: 14px 0px 32px 0px;
+    }
+  }
+}
+
+.first-card-padding {
+  padding-bottom: 54px;
+}

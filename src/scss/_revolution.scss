@@ -1,0 +1,81 @@
+.revolution {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 0 70px 0;
+//   background-color: red;
+  text-align: center;
+
+  &__main {
+    // background-color: blue;
+    max-width: 906px;
+    margin: 0 auto;
+    margin-top: 66px;
+  }
+
+  &__head {
+    @include font(400, 14px, $secondary-color, 15px);
+  }
+
+  &__title {
+    @include font(700, 54px, $revolution-color, 54px);
+  }
+
+  &__paragraph {
+    font-family: "Lato", sans-serif;
+    @include font(400, 21px, $primary-color, 32px);
+    margin-top: 20px;
+  }
+
+  &__btns {
+    display: flex;
+    // background-color: orange;
+    width: 365px;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 13px;
+
+    button {
+      padding: 5px;
+      font-weight: bold;
+      border: 1px solid lightgrey;
+      cursor: pointer;
+    }
+
+    span {
+      border: 1px solid lightgrey;
+      padding: 5px;
+      font-size: 13px;
+      margin-left: -5px;
+      font-weight: 700;
+    }
+  }
+}
+
+@media screen and (max-width: ($md3 + px)) and (min-width: ($minWidth+px)) {
+  .revolution {
+    padding: 10px;
+    &__title {
+      @include font(700, 26px, $revolution-color, 28px);
+    }
+    &__paragraph {
+      @include font(400, 14px, $primary-color, 20px);
+    }
+
+    &__btns{
+        width: 267px;
+        text-align: center;
+        justify-content: center;
+    }
+  }
+}
+
+@media screen and (max-width: ($md2 + px)) and (min-width: ($md3+px)) {
+  .revolution {
+    padding: 10px;
+    &__title {
+      @include font(700, 42px, $revolution-color, 42px);
+    }
+  }
+}

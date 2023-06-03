@@ -1,0 +1,47 @@
+@mixin font($weight,$size,$color,$height:1){
+    font-weight: $weight;
+    font-size: $size;
+    color: $color;
+    line-height: $height;
+}
+
+@mixin flex($jc,$at,$fd:row){
+    display: flex;
+    justify-content: $jc;
+    align-items: $at;
+    flex-direction: $fd;
+}
+
+@mixin MontserratFont {
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  @mixin LatoFont {
+    font-family: 'Lato', sans-serif;
+  }
+  
+  @mixin fontParameters ($fst, $fw, $fs, $lh, $color) {
+    font-style: $fst;
+    font-weight: $fw;
+    font-size: $fs;
+    line-height: $lh;
+    color: $color;
+  }
+  
+  @mixin bg-center {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  @mixin flex-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  @mixin text-MontWhite {
+    font-family: 'Montserrat', sans-serif;
+    color: #FFFFFF;
+  }
+  

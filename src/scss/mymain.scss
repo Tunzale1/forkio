@@ -1,7 +1,6 @@
-@import "src/styles/display.scss";
-@import "src/styles/_vars.scss";
-@import "src/styles/_mixins.scss";
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import "src/scss/display.scss";
+@import "src/scss/_mixins.scss";
+// @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 body{
 width: 100%;
 margin: 0;
@@ -11,17 +10,9 @@ padding: 0;
 header{
     color:$white;
     font-family: 'Montserrat', sans-serif;
-    background-image: url("https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
     height: 750px;
 }
-.texts{
-    @include auto;
-    @include center;
-    margin-top: 10px;
-    font-family: 'Montserrat', sans-serif; 
-}
+
 .firstpage{
     @include auto;
     @include center;
@@ -39,18 +30,16 @@ height: 41px;
     display: none;
     margin-left: 10px;
 }
-ul{
-    list-style-type: none;
+.ul{
     @include display; 
     width:50%;
     font-weight: 700;
     font-size: 16px;
-    // margin-left: 10%;
+    margin-left: 10%;
 }
-.button{
-height: 20px;
+.buttonx{
+height: 30px;
 margin-right: 10px;
-margin-top: 10px;
 padding: 5px 10px 5px 10px;
 color:$white;
 background-color: $purple;
@@ -59,7 +48,7 @@ border-radius: 40px;
 margin: auto;
 max-width: 40%;
 height: 50px;
-padding-top: 15px;
+padding-top: 10px;
 font-weight: 700;
 font-size: 21px;
 text-align: center;
@@ -77,29 +66,27 @@ margin-top: -35px;
 .text{
     color: #848E97;
     font-size: 16px;
-    margin-top: -23px;
 }
-.button:hover{
+.buttonx:hover{
     background-color: $white;
     color:$purple;
 }
-li{
+.li{
     color:$purple;
 }
-li:hover{
+.li:hover{
     color:$white;
 }
 .thead{
     @include display; 
     margin-top: 30px;
 }
-h1{
+.h1{
     margin-top: 127px;
     font-weight: 700;
     font-size: 82px;
 }
-h4{
-    margin-top: -20px;
+.h4{
     color:$purple;
     font-family: 'Lato';
     font-weight: 400;
@@ -107,17 +94,17 @@ font-size: 30px;
 }
 
 @media screen and (max-width:992px)and (min-width:481px){
-ul{
+.ul{
     margin: 80px -10px 0px -100px;
     font-size: 16px;
 }
 
 }
 @media screen and (max-width:770px){
-    ul{
+    .ul{
         font-size: 13px;
     }
-    .button{
+    .buttonx{
         
         &__2{
             max-width: 80%;
@@ -130,15 +117,15 @@ ul{
     }
 }
 @media screen and (max-width:480px){
-h1{
+.h1{
     font-size: 48px;
 }
-h4{
+.h4{
     font-size: 18px;
 }
 .thead{
     padding-top: 30px;
-    background-color:black ;
+    background-color:rgb(24, 24, 24) ;
     margin-top: 0;
 }
 .logo{
@@ -149,20 +136,21 @@ h4{
     width: 43px;
 height: 41px;
 }
-ul{
+.ul{
     display: none;
 }
-ul.active{
+.ul.active{
     display: block;
     background-color: rgb(63, 63, 63);
     position: absolute;
     top:70px;
     width: 70%;
     height:300px;
-    left: 50%;
+    left: 40%;
+    right: 50%;
     transform: translate(-50%);
 }
-li{
+.li{
     display: block;
     width: 100%;
     font-weight: 400;
@@ -180,15 +168,8 @@ li{
 
 
 .testimonials {
-  background-image: url("https://telegra.ph/file/62a2929bcb01777657b5c.png");
-  //background: url('src/img/testmonials-bg1.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-color: #423444;
-  padding: 0 10px;
-
+  padding: 0 30px;
   &__container {
-    background: url('src/img/testmonials-bg1.png');
     @include marginAndWidth(90%, 0 auto);
     @media (min-width: 1200px) {
       @include marginAndWidth(1200px, 0 auto);
@@ -250,14 +231,14 @@ li{
   }
 }
 .clients {
-  @include flex;
+  @include flexc;
   @media (min-width: 481px) {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
   }
   &__card {
-    @include flex;
+    @include flexc;
     justify-content: center;
     @media (min-width: 481px) and (max-width: 992px) {
       width: 40%;

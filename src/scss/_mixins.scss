@@ -1,47 +1,143 @@
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin reset-style {
+  text-decoration: none;
+  list-style: none;
+}
+
+@mixin post-images {
+  width: 160px;
+  height: 140px;
+}
+
+@mixin text-style {
+  text-decoration: none;
+  font-style: normal;
+  font-weight: bold;
+}
+
+
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin mainButton {
+  padding: 11px 24px;
+  color: #fff;
+  border: none;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 15px;
+  font-family: "Montserrat", sans-serif;
+}
+
+@mixin marginAndWidth($width, $margin) {
+  width: $width;
+  margin: $margin;
+}
+
+@mixin paddingAndWidth($width, $padding) {
+  width: $width;
+  padding: $padding;
+}
+
+@mixin marginAndWidthFont($width, $margin, $padding) {
+  width: $width;
+  padding: $padding;
+  margin: $margin;
+}
+
+// @mixin fontSizeFontFamily($fontSize) {
+//   font-size: $fontSize;
+
+// }
+@mixin font($weight, $size, $color, $line-height) {
+  font-weight: $weight;
+  font-size: $size;
+  color: $color;
+  line-height: $line-height;
+}
+
+
+
+@mixin mediaWidth($width, $margin, $display, $line) {
+  width: $width;
+  margin: $margin;
+  display: $display;
+  line-height: $line;
+}
+@mixin flexc {
+  display: flex;
+  flex-direction: column;
+}
+@mixin flex-box($flex, $justify, $aling) {
+  display: $flex;
+  justify-content: $justify;
+  align-items: $aling;
+}
+@mixin flex-box-direction($flex, $direction, $justify, $aling) {
+  display: $flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $aling;
+}
+
+@mixin bottom-position($position, $bottom, $padding) {
+  position: $position;
+  bottom: $bottom;
+  padding: $padding;
+}
 @mixin font($weight,$size,$color,$height:1){
-    font-weight: $weight;
-    font-size: $size;
-    color: $color;
-    line-height: $height;
+  font-weight: $weight;
+  font-size: $size;
+  color: $color;
+  line-height: $height;
 }
 
 @mixin flex($jc,$at,$fd:row){
-    display: flex;
-    justify-content: $jc;
-    align-items: $at;
-    flex-direction: $fd;
+  display: flex;
+  justify-content: $jc;
+  align-items: $at;
+  flex-direction: $fd;
 }
 
 @mixin MontserratFont {
-    font-family: 'Montserrat', sans-serif;
-  }
-  
-  @mixin LatoFont {
-    font-family: 'Lato', sans-serif;
-  }
-  
-  @mixin fontParameters ($fst, $fw, $fs, $lh, $color) {
-    font-style: $fst;
-    font-weight: $fw;
-    font-size: $fs;
-    line-height: $lh;
-    color: $color;
-  }
-  
-  @mixin bg-center {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-  }
-  
-  @mixin flex-column {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  @mixin text-MontWhite {
-    font-family: 'Montserrat', sans-serif;
-    color: #FFFFFF;
-  }
-  
+  font-family: 'Montserrat', sans-serif;
+}
+
+@mixin LatoFont {
+  font-family: 'Lato', sans-serif;
+}
+
+@mixin fontParameters ($fst, $fw, $fs, $lh, $color) {
+  font-style: $fst;
+  font-weight: $fw;
+  font-size: $fs;
+  line-height: $lh;
+  color: $color;
+}
+
+@mixin bg-center {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@mixin text-MontWhite {
+  font-family: 'Montserrat', sans-serif;
+  color: #FFFFFF;
+}

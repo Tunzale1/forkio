@@ -1,4 +1,6 @@
 .fork {
+  // @include auto;
+  // @include center;
   margin: 0 auto;
   padding-left: 10px;
   padding-right: 10px;
@@ -13,8 +15,8 @@
 
   &__cards {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    // justify-content: center;
+    // align-items: center;
     gap: 15px;
 
     @media (max-width: ($md8 + px)) {

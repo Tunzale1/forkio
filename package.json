@@ -8,10 +8,8 @@
     "dev": "gulp dev",
     "build": "gulp build"
   },
-  "keywords": [],
   "author": "Kanan Karimli , Imanova Tunzala",
   "license": "ISC",
-  "type": "module",
   "devDependencies": {
     "browser-sync": "^2.29.3",
     "cssnano": "^6.0.1",
@@ -20,12 +18,13 @@
     "gulp-clean": "^0.4.0",
     "gulp-clean-css": "^4.3.0",
     "gulp-concat": "^2.6.1",
-    "gulp-imagemin": "^8.0.0",
+    "gulp-imagemin": "^7.1.0",
     "gulp-js-minify": "^0.0.3",
     "gulp-postcss": "^9.0.1",
     "gulp-sass": "^5.1.0",
     "gulp-sourcemaps": "^3.0.0",
     "gulp-uglify": "^3.0.2",
+    "gulp-purgecss": "^5.0.0",
     "sass": "^1.62.1"
   },
   "repository": {

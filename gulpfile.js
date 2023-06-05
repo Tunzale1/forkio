@@ -1,73 +1,73 @@
-import gulp from "gulp";
-import dartSass from "sass";
-import gulpSass from "gulp-sass";
-import postcss from "gulp-postcss";
-import autoprefixer from "autoprefixer";
-import cssnano from "cssnano";
-import sourcemaps from "gulp-sourcemaps";
-import concat from "gulp-concat";
-import uglify from "gulp-uglify";
-import imagemin from "gulp-imagemin";
-import browserSync from "browser-sync";
 
-const sass = gulpSass(dartSass);
-const server = browserSync.create();
+const gulp = require('gulp');
+const sass = require('gulp-sass')(require('sass'));
+const imagemin = require('gulp-imagemin');
+const browserSync = require('browser-sync').create();
+const purgecss = require('gulp-purgecss');
+const concat = require('gulp-concat');
+const uglify = require('gulp-uglify');
 
-const files = {
-  scssPath: "src/scss/**/*.scss",
-  jsPath: "src/js/**/*.js",
-  imagePath: "src/images/**/*",
-};
-
-const sassBuildTask = () => {
-  return gulp
-    .src(files.scssPath)
-    .pipe(sourcemaps.init())
-    .pipe(sass())
-    .pipe(postcss([autoprefixer(), cssnano()]))
-    .pipe(concat("styles.min.css"))
-    .pipe(sourcemaps.write("."))
-    .pipe(gulp.dest("dist/css"))
-    .pipe(server.stream());
-};
-
-const jsTask = () => {
-  return gulp
-    .src(files.jsPath)
-    .pipe(concat("scripts.min.js"))
-    .pipe(uglify())
-    .pipe(gulp.dest("dist/js"))
-    .pipe(server.stream());
-};
-
-const imageTask = () => {
-  return gulp
-    .src(files.imagePath)
-    .pipe(imagemin())
-    .pipe(gulp.dest("dist/img"))
-    .pipe(server.stream());
-};
-
-const buildTask = gulp.series(
-  gulp.parallel(sassBuildTask, jsTask, imageTask)
+//imagemin
+exports.default = () => (
+  gulp.src('src/images/*')
+      .pipe(imagemin())
+      .pipe(gulp.dest('dist/img'))
 );
 
-const serveTask = () => {
-  server.init({
-    server: {
-      baseDir: "./",
-    },
+//src script to dist script
+gulp.task("folder", function(){
+  return gulp.src("src/script/script.js").pipe(gulp.dest("dist/js"))
+})
+
+//src scss to dis css
+gulp.task('compileSass', function () {
+  return gulp.src('src/scss/*')
+      .pipe(sass().on('error', sass.logError))
+      .pipe(gulp.dest('dist/css'));
+});
+
+// remove unused CSS
+gulp.task('css', function () {
+  return gulp.src('dist/css/**/*.css')
+    .pipe(purgecss({
+      content: ['src/**/*.html', 'src/**/*.js'],
+      safelist: [/^swiper-/, /^aos-/] // Add any classes or patterns you want to keep here
+    }))
+    .pipe(gulp.dest('dist/css'));
+});
+
+// Concatenate and minify JS files
+gulp.task('js', function () {
+  return gulp.src('src/script/**/*.js')
+    .pipe(concat('scripts.min.js'))
+    .pipe(uglify())
+    .pipe(gulp.dest('dist/js'));
+});
+
+// Building task
+gulp.task('build', gulp.series( 'css','compileSass', 'js', 'folder'));
+// Development task
+gulp.task('dev', function () {
+  // Start the server
+    browserSync.init({
+      server: './'
+    });
+  //Watch for changes in JS and SCSS files
+    gulp.watch('src/script/**/*.js', gulp.series('folder'));
+    gulp.watch('src/scss/**/*.scss', gulp.series('compileSass'));
+  
+  // Reload the HTML page
+    gulp.watch('index.html').on('change', browserSync.reload);
   });
-};
 
-const watchTask = () => {
-  gulp.watch(files.scssPath, sassBuildTask);
-  gulp.watch(files.jsPath, jsTask);
-  gulp.watch(files.imagePath, imageTask);
-  gulp.watch("*.html").on("change", server.reload);
-};
+  // Clean the dist folder
+gulp.task('clean', function () {
+  return gulp.src('dist', { read: false, allowEmpty: true })
+    .pipe(clean());
+});
 
-export const dev = gulp.series(buildTask, gulp.parallel(watchTask, serveTask));
-
-export { buildTask as build };
-export default dev;
+// Copy HTML file to the dist folder
+gulp.task('copyHtml', function () {
+  return gulp.src('index.html')
+    .pipe(gulp.dest('dist'));
+});

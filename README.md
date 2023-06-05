@@ -1,6 +1,6 @@
--In this task we used mainly BEM metholgy and Gulpfile.js task manager. There are also packages (gulp,gulp-sass, browser-sync, gulp-js-minify, gulp-uglify, gulp-clean-css, gulp-clean, gulp-concat, gulp-imagemin, gulp-autoprefixer)
+-In this task we used mainly BEM metholgy and Gulpfile.js task manager. There are also packages (gulp,gulp-sass, gulp-purgecss, browser-sync, gulp-js-minify, gulp-uglify, gulp-clean-css, gulp-clean, gulp-concat, gulp-imagemin, gulp-autoprefixer)
 
--Our team consists of Imanova Tunzala and Karimli Kanan. Here you can our tasks which we did.
+-Our team consists of Imanova Tunzala and Karimli Kanan. Here you can see our tasks which we did.
 
 -#Task 1_ Imanova Tunzala
 - *Fork App*.
